@@ -32,5 +32,22 @@ public class GiftCardTest
 	 
 	 assertEquals("getBalance()", balance, card.getBalance(), 0.001);
  }
+ 
+ @Test
+ public void deductRemainBal()
+ {
+	 double balance;
+	 GiftCard card;
+	 int issuingStore;
+	 String s;
+	 
+	 issuingStore = 1337;
+	 balance = 100.00;
+	 card = new GiftCard(issuingStore, balance);
+	 
+	 s = "The Remaining Balance Is: " + String.format("%6.2f", 90.00);
+	 assertEquals("deduct(10.00)", s, card.deduct(10.0));
+	 
+ }
 }
 
